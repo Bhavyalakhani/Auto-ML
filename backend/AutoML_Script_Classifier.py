@@ -8,9 +8,6 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
-import io
-import csv
-
 
 # In[4]:
 
@@ -256,7 +253,7 @@ def runtool(file_url,target):
     # In[26]:
     
     
-    rfc=RandomForestClassifier(random_state=42)
+    # rfc=RandomForestClassifier(random_state=42)
     
     
     # In[27]:
