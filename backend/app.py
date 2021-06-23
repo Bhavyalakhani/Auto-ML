@@ -12,6 +12,8 @@ import pickle
 import numpy as np
 import pandas as pd
 import os
+from flask import Flask
+from flask_cors import CORS, cross_origin
 
 from AutoML_Script_Classifier import runtool
  
@@ -22,8 +24,10 @@ ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif','csv','xlsx'}
 app = Flask(__name__)
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
+CORS(app)
 
 @app.route("/")
+@cross_origin()
 def index():
     return 'This is the homepage'
 
@@ -34,7 +38,7 @@ def allowed_file(filename):
            
 
 @app.route('/upload', methods=['GET', 'POST'])
-
+@cross_origin()
 
 
 
