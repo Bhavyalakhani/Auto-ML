@@ -6,6 +6,7 @@ class App extends React.Component {
 
     this.state = {
       imageURL: '',
+      predict:null
     };
 
     this.handleUploadImage = this.handleUploadImage.bind(this);
@@ -15,8 +16,8 @@ class App extends React.Component {
     console.log("FUNCTION CLLED")
     ev.preventDefault();
     var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    const data = new FormData();
+    myHeaders.append("Content-Type", "multipart/form-data");
+    let data = new FormData();
     data.append("file", this.uploadInput.files[0]);
     data.append("target", this.fileName.value);
     // data.append('file', this.uploadInput.files[0]);
@@ -31,7 +32,8 @@ class App extends React.Component {
       console.log("EEE")
       response.json().then((body) => {
         console.log(body)
-        console.log("HELLEW")
+        console.log("HELLEW");
+        this.setState({predict:body})
         // this.setState({ imageURL: `http://localhost:8000/${body.file}` });
       });
     }).catch((err) => {
@@ -52,6 +54,11 @@ class App extends React.Component {
         <div>
           <button>Upload</button>
         </div>
+        {this.state.predict?
+        <div>this.state.predict</div>
+        :
+        null
+        }
       </form>
     );
   }

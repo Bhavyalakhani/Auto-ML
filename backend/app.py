@@ -24,7 +24,7 @@ ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif','csv','xlsx'}
 app = Flask(__name__)
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
-CORS(app)
+cors = CORS(app)
 
 @app.route("/")
 @cross_origin()
@@ -37,11 +37,8 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
            
 
-@app.route('/upload', methods=['GET', 'POST'])
+@app.route('/upload', methods=[ 'POST'])
 @cross_origin()
-
-
-
 def upload_file():
     target = request.form.get("target")
     print(target)
