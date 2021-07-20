@@ -1,6 +1,8 @@
-<<<<<<< HEAD
 # Auto-ML
-=======
-# Auto-ML
+It is a simple, easy to use web app which allows users to upload their dataset and fill the name of target field.
 
->>>>>>> 51d6f2b0485ee7f33a1e6a33ec0c3cad7543f4f8
+Then our app preprocesses the dataset and applies various Machine learning Regression and classification algorithms depending on the case.
+
+After processing our system will return a model with highest perform which the user can download and use.
+
+Tech Stack: React JS , Flask , Python , Tensorflow , sklearn
