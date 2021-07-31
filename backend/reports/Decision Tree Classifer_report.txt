@@ -1,0 +1,14 @@
+
+DecisionTreeClassifier(criterion='entropy', random_state=0)
+               precision    recall  f1-score   support
+
+           0       0.85      0.92      0.88        37
+           1       0.85      0.74      0.79        23
+
+    accuracy                           0.85        60
+   macro avg       0.85      0.83      0.84        60
+weighted avg       0.85      0.85      0.85        60
+
+ accuracy score: 0.85
+ Roc auc score: 0.8290246768507638
+ Remarks: good Model
