@@ -15,7 +15,7 @@ import os
 from flask import Flask
 from flask_cors import CORS, cross_origin
 
-from AutoML_Script_Classifier import runtool
+from AutoML_Script_Classifier1 import runtool
  
 UPLOAD_FOLDER = './uploads/'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif','csv','xlsx'}

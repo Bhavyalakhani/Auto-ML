@@ -4,18 +4,18 @@ XGBClassifier(base_score=0.5, booster='gbtree', colsample_bylevel=1,
               importance_type='gain', interaction_constraints='',
               learning_rate=0.300000012, max_delta_step=0, max_depth=6,
               min_child_weight=1, missing=nan, monotone_constraints='()',
-              n_estimators=100, n_jobs=4, num_parallel_tree=1, random_state=0,
+              n_estimators=100, n_jobs=8, num_parallel_tree=1, random_state=0,
               reg_alpha=0, reg_lambda=1, scale_pos_weight=1, subsample=1,
               tree_method='exact', validate_parameters=1, verbosity=None)
                precision    recall  f1-score   support
 
-           0       0.82      0.89      0.86        37
-           1       0.80      0.70      0.74        23
+           0       0.95      0.98      0.96       947
+           1       0.98      0.95      0.97       987
 
-    accuracy                           0.82        60
-   macro avg       0.81      0.79      0.80        60
-weighted avg       0.82      0.82      0.81        60
+    accuracy                           0.96      1934
+   macro avg       0.96      0.97      0.96      1934
+weighted avg       0.97      0.96      0.96      1934
 
- accuracy score: 0.8166666666666667
- Roc auc score: 0.7937720329024677
+ accuracy score: 0.9648397104446742
+ Roc auc score: 0.9650814335035505
  Remarks: good Model
