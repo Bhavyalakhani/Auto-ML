@@ -21,6 +21,7 @@ from sklearn.metrics import confusion_matrix, accuracy_score
 
 def runtool(file_url,target):
     dataset = pd.read_csv(file_url)
+    target_column = target
     dataset
 # In[3]:
 
@@ -110,7 +111,6 @@ def runtool(file_url,target):
     # In[10]:
     
     
-    target_column = target
     id1 = "id"
     
     
