@@ -14,6 +14,7 @@ import matplotlib.pyplot as plt
 def runtool(file_url,target):
     print("Running Tool")
     dataset = pd.read_csv(file_url)
+    target_column = target
     dataset
     
     
@@ -46,7 +47,6 @@ def runtool(file_url,target):
     if id1 in dataset.columns:
         dataset.drop(id1,inplace=True,axis=1)
     
-    target_column = target
     for i in range(len(datatypes)):
         if datatypes.index[i] != target_column:
             if datatypes[i]=='object':

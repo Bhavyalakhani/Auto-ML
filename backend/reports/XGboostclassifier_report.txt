@@ -9,13 +9,13 @@ XGBClassifier(base_score=0.5, booster='gbtree', colsample_bylevel=1,
               tree_method='exact', validate_parameters=1, verbosity=None)
                precision    recall  f1-score   support
 
-           0       0.95      0.98      0.96       947
-           1       0.98      0.95      0.97       987
+           0       0.82      0.89      0.86        37
+           1       0.80      0.70      0.74        23
 
-    accuracy                           0.96      1934
-   macro avg       0.96      0.97      0.96      1934
-weighted avg       0.97      0.96      0.96      1934
+    accuracy                           0.82        60
+   macro avg       0.81      0.79      0.80        60
+weighted avg       0.82      0.82      0.81        60
 
- accuracy score: 0.9648397104446742
- Roc auc score: 0.9650814335035505
+ accuracy score: 0.8166666666666667
+ Roc auc score: 0.7937720329024677
  Remarks: good Model

@@ -2,13 +2,13 @@
 GaussianNB()
                precision    recall  f1-score   support
 
-           0       0.98      0.16      0.28       947
-           1       0.55      1.00      0.71       987
+           0       0.68      0.92      0.78        37
+           1       0.70      0.30      0.42        23
 
-    accuracy                           0.59      1934
-   macro avg       0.77      0.58      0.50      1934
-weighted avg       0.76      0.59      0.50      1934
+    accuracy                           0.68        60
+   macro avg       0.69      0.61      0.60        60
+weighted avg       0.69      0.68      0.64        60
 
- accuracy score: 0.5884177869700103
- Roc auc score: 0.579789641260355
+ accuracy score: 0.6833333333333333
+ Roc auc score: 0.6116333725029377
  Remarks: good Model
