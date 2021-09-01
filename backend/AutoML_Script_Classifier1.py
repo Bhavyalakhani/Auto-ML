@@ -295,6 +295,12 @@ def runtool(file_url,target):
     
     # In[26]:
     
+    from sklearn.preprocessing import LabelEncoder
+    if(y_data.dtypes == "object"):
+        print(y_data.dtypes)
+        le = LabelEncoder()
+        y_data = le.fit_transform(y_data)
+        y_data
     
     from imblearn.over_sampling import ADASYN
     from collections import Counter
@@ -347,7 +353,7 @@ def runtool(file_url,target):
         preds = model.predict(X_test)
         report = classification_report(y_test,preds)
         balanced_accuracy = '-'
-        roc_score = roc_auc_score(y_test, preds)
+        roc_score = roc_auc_score(y_test, preds,multi_class="ovr")
         accuracyscore = accuracy_score(y_test, preds)
         print(f'\n{model}\n {report}\n  accuracy score: {accuracyscore}\n Roc auc score: {roc_score}\n Remarks: {remarks}')
         with open(".//reports//"+model_name+"_report.txt", "w") as myfile:

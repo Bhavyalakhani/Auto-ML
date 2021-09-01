@@ -2,13 +2,13 @@
 AdaBoostClassifier(learning_rate=1, n_estimators=100)
                precision    recall  f1-score   support
 
-           0       0.77      0.89      0.82        37
-           1       0.76      0.57      0.65        23
+           0       0.93      1.00      0.96       947
+           1       1.00      0.93      0.96       987
 
-    accuracy                           0.77        60
-   macro avg       0.77      0.73      0.74        60
-weighted avg       0.77      0.77      0.76        60
+    accuracy                           0.96      1934
+   macro avg       0.96      0.96      0.96      1934
+weighted avg       0.97      0.96      0.96      1934
 
- accuracy score: 0.7666666666666667
- Roc auc score: 0.7285546415981198
+ accuracy score: 0.9632885211995863
+ Roc auc score: 0.9639896264960858
  Remarks: Good report

@@ -2,13 +2,13 @@
 SVC(random_state=0)
                precision    recall  f1-score   support
 
-           0       0.78      0.97      0.87        37
-           1       0.93      0.57      0.70        23
+           0       0.89      0.96      0.93       947
+           1       0.96      0.89      0.92       987
 
-    accuracy                           0.82        60
-   macro avg       0.86      0.77      0.79        60
-weighted avg       0.84      0.82      0.80        60
+    accuracy                           0.92      1934
+   macro avg       0.93      0.93      0.92      1934
+weighted avg       0.93      0.92      0.92      1934
 
- accuracy score: 0.8166666666666667
- Roc auc score: 0.7690951821386603
+ accuracy score: 0.9245087900723888
+ Roc auc score: 0.9253109857931353
  Remarks: good Model
