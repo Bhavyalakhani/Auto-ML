@@ -12,8 +12,8 @@ import pickle
 import numpy as np
 import pandas as pd
 import os
-from flask import Flask
-from flask_cors import CORS, cross_origin
+from flask import Flask,jsonify
+from flask_cors import CORS,cross_origin
 
 from AutoML_Script_Classifier1 import runtool
  
@@ -22,12 +22,12 @@ ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif','csv','xlsx'}
 
 
 app = Flask(__name__)
+CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
+
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
-cors = CORS(app)
-
 @app.route("/")
-@cross_origin()
 def index():
     return 'This is the homepage'
 
@@ -37,14 +37,16 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
            
 
-@app.route('/upload', methods=[ 'POST'])
+@app.route('/upload', methods=['POST'])
 @cross_origin()
 def upload_file():
+    print("Reached Upload Route")
     target = request.form.get("target")
+    print(request.data)
     print(target)
+    print(request.files)
     if request.method == 'POST':
         if 'file' not in request.files:
-            flash('No file part')
             return "NO file"
         file = request.files['file']
         # if user does not select file, browser also
@@ -57,9 +59,12 @@ def upload_file():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             print("uploading successful")
             accuracy_val = runtool(os.path.join(app.config['UPLOAD_FOLDER'], filename),target)
+            response = jsonify(message="success",output=accuracy_val)
+            response.headers.add("Access-Control-Allow-Origin", "*")
             return str(accuracy_val)
 
 
 
 if __name__ == "__main__":
-    app.run(debug=True,threaded=True)
+    app.debug = True
+    app.run()

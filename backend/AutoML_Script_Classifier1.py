@@ -430,7 +430,7 @@ def runtool(file_url,target):
     # In[69]:
     
     print("Writing the report")
-    write_report(DT_classifier,"good Model","Decision Tree Classifer")
+    # write_report(DT_classifier,"good Model","Decision Tree Classifer")
     
     
     # ### Random Forest classifier
@@ -456,7 +456,7 @@ def runtool(file_url,target):
     # In[71]:
     
     
-    write_report(RandomForestclassifier,"good Model","RandomForestClassifier")
+    # write_report(RandomForestclassifier,"good Model","RandomForestClassifier")
     
     
     # ### XgBoost Classifier
@@ -477,7 +477,7 @@ def runtool(file_url,target):
     # In[73]:
     
     
-    write_report(XGboostclassifier,"good Model","XGboostclassifier")
+    # write_report(XGboostclassifier,"good Model","XGboostclassifier")
     
     
     # ### SVM Classifier
@@ -504,7 +504,7 @@ def runtool(file_url,target):
     # In[79]:
     
     
-    write_report(SVCclassifier,"good Model","SVCclassifier")
+    # write_report(SVCclassifier,"good Model","SVCclassifier")
     
     
     # ### Naive Bayes 
@@ -530,7 +530,7 @@ def runtool(file_url,target):
     # In[86]:
     
     
-    write_report(GaussianNBclassifier,"good Model","GaussianNBclassifier")
+    # write_report(GaussianNBclassifier,"good Model","GaussianNBclassifier")
     
     
     # ### Ada Boost
@@ -556,7 +556,7 @@ def runtool(file_url,target):
     # In[89]:
     
     
-    write_report(AdaboostClassifier,"Good report","AdaboostClassifier")
+    # write_report(AdaboostClassifier,"Good report","AdaboostClassifier")
     
     
     # ### Finding the best model
