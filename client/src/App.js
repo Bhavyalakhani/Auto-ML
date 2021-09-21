@@ -42,7 +42,12 @@ class App extends React.Component {
     // .catch((error) => console.log(error))
     axios
       .post('http://127.0.0.1:5000/upload', data)
-      .then((res) => console.log(res))
+      .then((res) => {
+        console.log(res);
+        this.setState((state) => ({
+          predict: res.data,
+        }));
+      })
       .catch((err) => console.log(err));
   }
 
@@ -85,7 +90,7 @@ class App extends React.Component {
                               <button>Upload</button>
                             </div>
                             {this.state.predict ? (
-                              <div>{this.state.predict}</div>
+                              <div>Accuracy: {this.state.predict}</div>
                             ) : null}
                           </form>
                           {/* <div class="container">
