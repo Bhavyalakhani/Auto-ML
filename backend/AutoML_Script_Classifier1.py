@@ -567,7 +567,7 @@ def runtool(file_url,target):
     bestmodel = max(model_accuracies, key = model_accuracies.get)
     print(bestmodel)
     print(model_accuracies[bestmodel])
-    return model_accuracies[bestmodel]
+    return model_accuracies[bestmodel],bestmodel
 
 # In[482]:
 

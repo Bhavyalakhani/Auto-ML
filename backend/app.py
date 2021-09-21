@@ -58,10 +58,10 @@ def upload_file():
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             print("uploading successful")
-            accuracy_val = runtool(os.path.join(app.config['UPLOAD_FOLDER'], filename),target)
-            response = jsonify(message="success",output=accuracy_val)
+            accuracy_val,bestmodel = runtool(os.path.join(app.config['UPLOAD_FOLDER'], filename),target)
+            response = jsonify(success=True,output=accuracy_val,model=bestmodel)
             response.headers.add("Access-Control-Allow-Origin", "*")
-            return str(accuracy_val)
+            return response
 
 
 
