@@ -7,7 +7,7 @@ class App extends React.Component {
     this.state = {
       imageURL: '',
       predict: null,
-      modelname:null
+      modelname: null,
     };
 
     this.handleUploadImage = this.handleUploadImage.bind(this);
@@ -42,16 +42,16 @@ class App extends React.Component {
     //   })
     // .catch((error) => console.log(error))
     axios
-      .post('http://127.0.0.1:5000/upload', data ,{
-        headers:{
-          "Accept":"application/json"
-        }
+      .post('http://127.0.0.1:5000/upload', data, {
+        headers: {
+          Accept: 'application/json',
+        },
       })
       .then((res) => {
         console.log(res);
         this.setState((state) => ({
-          predict: Number(res.data.output)*100,
-          modelname: res.data.model
+          predict: Number(res.data.output) * 100,
+          modelname: res.data.model,
         }));
       })
       .catch((err) => console.log(err));
@@ -59,53 +59,113 @@ class App extends React.Component {
 
   render() {
     return (
-      <div class="container">
-        <div class="container">
-          <div class="container">
-            <div class="container">
-              <div class="container">
-                <div class="container">
-                  <div class="container">
-                    <div class="container">
-                      <div class="container">
-                        <div class="container">
+      <div>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <div className="container">
+            <a className="navbar-brand" href="#">
+              Auto ML
+            </a>
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarNav">
+              <ul className="navbar-nav">
+                <li className="nav-item active">
+                  <a className="nav-link" href="#">
+                    Home
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#">
+                    Features
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div className="container">
+          <div className="container">
+            <div className="container">
+              <div className="container">
+                <div className="container">
+                  <div className="container">
+                    <div className="container">
+                      <div className="container">
+                        <div className="container">
                           <br></br>
-                          <h1>Auto ML</h1>
+                          {/* <h1>Auto ML</h1> */}
                           <br></br>
                           <form onSubmit={this.handleUploadImage}>
                             <div>
-                              <input
+                              <label>Choose a dataset</label>
+                              <br></br>
+                              {/* <input
                                 ref={(ref) => {
                                   this.uploadInput = ref;
                                 }}
                                 type="file"
+                              /> */}
+                              <input
+                                type="file"
+                                ref={(ref) => {
+                                  this.uploadInput = ref;
+                                }}
+                                class="form-control"
+                                id="inputGroupFile04"
+                                aria-describedby="inputGroupFileAddon04"
+                                aria-label="Upload Dataset"
                               />
                             </div>
                             <br></br>
                             <div>
-                              <input
+                              {/* <input
                                 ref={(ref) => {
                                   this.fileName = ref;
                                 }}
                                 type="text"
                                 placeholder="Enter the name of Target Variable"
+                              /> */}
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="exampleInputEmail1"
+                                aria-describedby="emailHelp"
+                                placeholder="Enter the name of Target Variable"
+                                ref={(ref) => {
+                                  this.fileName = ref;
+                                }}
                               />
                             </div>
                             <br />
                             <div>
                               <button>Upload</button>
                             </div>
-                            {this.state.predict ? (
-                              <div>Accuracy: {this.state.predict}%</div>
-                            ) : null}
-                            {
-                              this.state.modelname?(
-                                <div>Model : {this.state.modelname} </div>
-                              )
-                              :
-                              null
-                            }
                           </form>
+                          <div>
+                            {this.state.modelname ? (
+                              <>
+                                <h1>Results</h1>
+                                <div>
+                                  Model with the best accuracy:{' '}
+                                  <b>{this.state.modelname}</b>
+                                </div>
+                              </>
+                            ) : null}
+                            {this.state.predict ? (
+                              <div>
+                                Accuracy: <b>{this.state.predict}%</b>
+                              </div>
+                            ) : null}
+                          </div>
                           {/* <div class="container">
                           <br /><br />
                           <h1>Auto ML</h1>
