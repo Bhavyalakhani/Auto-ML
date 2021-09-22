@@ -7,6 +7,7 @@ class App extends React.Component {
     this.state = {
       imageURL: '',
       predict: null,
+      modelname:null
     };
 
     this.handleUploadImage = this.handleUploadImage.bind(this);
@@ -41,11 +42,16 @@ class App extends React.Component {
     //   })
     // .catch((error) => console.log(error))
     axios
-      .post('http://127.0.0.1:5000/upload', data)
+      .post('http://127.0.0.1:5000/upload', data ,{
+        headers:{
+          "Accept":"application/json"
+        }
+      })
       .then((res) => {
         console.log(res);
         this.setState((state) => ({
-          predict: res.data,
+          predict: res.data.output,
+          modelname: res.data.model
         }));
       })
       .catch((err) => console.log(err));
@@ -92,6 +98,13 @@ class App extends React.Component {
                             {this.state.predict ? (
                               <div>Accuracy: {this.state.predict}</div>
                             ) : null}
+                            {
+                              this.state.modelname?(
+                                <div>Model : {this.state.modelname} </div>
+                              )
+                              :
+                              null
+                            }
                           </form>
                           {/* <div class="container">
                           <br /><br />

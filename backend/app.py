@@ -60,7 +60,8 @@ def upload_file():
             print("uploading successful")
             accuracy_val,bestmodel = runtool(os.path.join(app.config['UPLOAD_FOLDER'], filename),target)
             response = jsonify(success=True,output=accuracy_val,model=bestmodel)
-            response.headers.add("Access-Control-Allow-Origin", "*")
+            # response.headers.add("Access-Control-Allow-Origin", "*")
+            response.headers.add("Content-Type","application/json")
             return response
 
 
