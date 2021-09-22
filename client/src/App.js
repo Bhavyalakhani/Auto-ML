@@ -50,7 +50,7 @@ class App extends React.Component {
       .then((res) => {
         console.log(res);
         this.setState((state) => ({
-          predict: res.data.output,
+          predict: Number(res.data.output)*100,
           modelname: res.data.model
         }));
       })
@@ -96,7 +96,7 @@ class App extends React.Component {
                               <button>Upload</button>
                             </div>
                             {this.state.predict ? (
-                              <div>Accuracy: {this.state.predict}</div>
+                              <div>Accuracy: {this.state.predict}%</div>
                             ) : null}
                             {
                               this.state.modelname?(
