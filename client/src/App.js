@@ -100,7 +100,7 @@ class App extends React.Component {
                   <div className="container">
                     <div className="container">
                       <div className="container">
-                        <div className="container">
+                        <div className="container main-container">
                           <br></br>
                           {/* <h1>Auto ML</h1> */}
                           <br></br>
@@ -119,7 +119,7 @@ class App extends React.Component {
                                 ref={(ref) => {
                                   this.uploadInput = ref;
                                 }}
-                                class="form-control"
+                                className="form-control"
                                 id="inputGroupFile04"
                                 aria-describedby="inputGroupFileAddon04"
                                 aria-label="Upload Dataset"
@@ -136,7 +136,7 @@ class App extends React.Component {
                               /> */}
                               <input
                                 type="text"
-                                class="form-control"
+                                className="form-control"
                                 id="exampleInputEmail1"
                                 aria-describedby="emailHelp"
                                 placeholder="Enter the name of Target Variable"
@@ -166,30 +166,30 @@ class App extends React.Component {
                               </div>
                             ) : null}
                           </div>
-                          {/* <div class="container">
+                          {/* <div className="container">
                           <br /><br />
                           <h1>Auto ML</h1>
                           <br /><br />
-                          <div class="container">
-                            <div class="input-group">
+                          <div className="container">
+                            <div className="input-group">
                               <input
                                 type="file"
-                                class="form-control"
+                                className="form-control"
                                 id="inputGroupFile04"
                                 aria-describedby="inputGroupFileAddon04"
                                 aria-label="Upload Dataset"
                               />
                             </div>
-                            <label for="exampleInputEmail1" class="form-label"
+                            <label for="exampleInputEmail1" className="form-label"
                               >Target Variable</label
                             >
                             <input
                               type="email"
-                              class="form-control"
+                              className="form-control"
                               id="exampleInputEmail1"
                               aria-describedby="emailHelp"
                             /><br /><button
-                              class="btn btn-outline-secondary"
+                              className="btn btn-outline-secondary"
                               type="button"
                               id="inputGroupFileAddon04"
                             >
@@ -206,6 +206,43 @@ class App extends React.Component {
             </div>
           </div>
         </div>
+        {/* <footer className="footer has-text-centered">
+          <hr></hr>
+          <div className="container">
+            <p className="has-text-weight-light">
+              &copy; 2021 Made by Vatsal, Bhavya, Samit under the guidance of
+              Dr. Pratik Kanani
+            </p>
+          </div>
+        </footer> */}
+        <footer className="site-footer">
+          <div className="container">
+            <div className="row">
+              <div className="col-sm-12 col-md-12">
+                <h6>About</h6>
+                <p className="text-justify">
+                  Auto ML is an initiative to help the upcoming ML Engineers
+                  with training of Models. AutoML focuses on preprocessing and
+                  training the most complex datasets without the interference of
+                  any human. We will help programmers train models without
+                  having any programming knowledge. We will return the model
+                  with the best accuracy on the provided dataset.
+                </p>
+              </div>
+            </div>
+            <hr></hr>
+          </div>
+          <div className="container">
+            <div className="row">
+              <div className="col-md-8 col-sm-6 col-xs-12">
+                <p className="copyright-text">
+                  Copyright &copy; 2021 All Rights Reserved by
+                  <a href="#">The Four Horsemen</a>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </footer>
       </div>
     );
   }
